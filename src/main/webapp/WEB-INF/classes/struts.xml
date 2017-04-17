@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+ 	<constant name="struts.devMode" value="false" />
+ 	
+	<package name="default" namespace="/" extends="struts-default">
+		
+		<action name="student" 
+			class="com.sylar.struts.StudentAction" method="newStudent" >
+		    <result name="success">pages/student.jsp</result>
+		</action>
+	
+		<action name="listall"
+			class="com.sylar.struts.StudentAction" method="listStudents" >
+		    <result name="success">pages/listall.jsp</result>
+		</action>
+		
+	</package>
+	
+</struts>  

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tutorialspoint.StudentDAO">
+<!--设置domain类和数据库中表的字段一一对应，注意数据库字段和domain类中的字段名称不致，此处一定要！-->
+    <resultMap id="BaseResultMap" type="com.tutorialspoint.Student">
+        <id column="USER_ID" property="id" jdbcType="INTEGER" />
+        <result column="USER_NAME" property="name" jdbcType="CHAR" />
+        <result column="USER_PASSWORD" property="age" jdbcType="INTEGER" />
+    </resultMap>
+    <!-- 查询单条记录 -->
+    <select id="getStudent" parameterType="int" resultMap="BaseResultMap">
+        SELECT * FROM student WHERE USER_ID = #{id}
+    </select>
+    <select id="listStudents" resultMap="BaseResultMap">
+        SELECT * FROM student
+    </select>
+</mapper>
